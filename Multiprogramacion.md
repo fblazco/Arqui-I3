@@ -1,21 +1,21 @@
 
-\## Multiprogramacion
+## Multiprogramación
 
 Simulacion de procesamiento paralelo que lleva a cabo el computador, se basa en la ejecucion intercalada de los programas. Si bien no es 100% ejecucion paralela, para el usuario se percibe como paralelismo real.
-+ Memoria Virtual:
-	+  Espacio de memoria direccionable que se traduce al espacio direccionable de la memoria principal 
-	+ MMU (memory management unit), encargada de traducir direcciones fisicas a mem. principal
-	+  espacio mem. virtual > esp. mem. fisica, asi el pc puede ocupar mas espacio del base
-+ Traduccion de Direcciones:
-	+ La MMU tiene una tabla que funciona como diccionario asociando direcciones virtuales y fisicas
-	+ Estas asociaciones no es tan en formato 1 a 1 si no que se usa el metodo de Paginacion
-	+ Paginacion:
-		+ La memoria virtual se divide en bloques contiguos llamados paginas
-		+ Cada pagina se mapea a un marco de la memoria fisica (comparten tamaño)
-		+ Usamos los bits de la direccion virtual para separar numero de pagina del offset de la palabra buscada en la pagina
-+ Tabla de Paginas:
-	+ Se encuentra en la seccion protegida de la memoria, almacenada en el registro especial PTBR (pete brasileño)
-	+ El indice de cada entrada (PTE) representa el numero de pagina conteniendo los bit de marco fisico y los bits de metadata 
+### Memoria Virtual:
+- Espacio de memoria direccionable que se traduce al espacio direccionable de la memoria principal 
+- MMU (memory management unit), encargada de traducir direcciones fisicas a mem. principal
+-  espacio mem. virtual > esp. mem. fisica, asi el pc puede ocupar mas espacio del base
+### Traduccion de Direcciones:
+- La MMU tiene una tabla que funciona como diccionario asociando direcciones virtuales y fisicas
+- Estas asociaciones no es tan en formato 1 a 1 si no que se usa el metodo de Paginacion
+- Paginacion:
+	- La memoria virtual se divide en bloques contiguos llamados paginas
+	+ Cada pagina se mapea a un marco de la memoria fisica (comparten tamaño)
+	+ Usamos los bits de la direccion virtual para separar numero de pagina del offset de la palabra buscada en la pagina
+### Tabla de Paginas:
++  Se encuentra en la seccion protegida de la memoria, almacenada en el registro especial PTBR (pete brasileño)
++ El indice de cada entrada (PTE) representa el numero de pagina conteniendo los bit de marco fisico y los bits de metadata 
 + Bits de metadata: 
 	 + Entregan informacion sobre la asociacion pagina marco fisico
 	 + Nos interesa uno en particular, el present bit
