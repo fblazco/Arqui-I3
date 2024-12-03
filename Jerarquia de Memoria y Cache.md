@@ -1,24 +1,25 @@
 
-+ Principios de localidad:
-	+ Principio de localidad temporal:
-		+Es probable que el dato obtenido en mem. sea utilizado posteriormente en otra operacion
+## Jerarquia de Memoria y Cache
+### Principios de localidad:
++ Principio de localidad temporal:
+	+ Es probable que el dato obtenido en mem. sea utilizado posteriormente en otra operacion
 	+ Principio de localidad espacial:
 		+Es probable que datos cercanos al buscado tambien sean usados
-+  Jerarquia de Memoria:
-	  +La memoria se divide en distintos niveles, ordenados jerarquicamente segun la cercania a la CPU, mientras mas cerca mas rapido el acceso a la memoria.
-	  +El nivel de memoria mas cercana a la CPU es la cache
-+ Memoria Cache:
-	  +Controlada por un controlador de cache
-	  +Dividida en lineas de memoria asociadas a bloques de memoria
-	  +Controlador de cache:
+### Jerarquia de Memoria:
+-  La memoria se divide en distintos niveles, ordenados jerarquicamente segun la cercania a la CPU, mientras mas cerca mas rapido el acceso a la memoria.
+- El nivel de memoria mas cercana a la CPU es la cache
+### Memoria Cache:
+- Controlada por un controlador de cache
+- Dividida en lineas de memoria asociadas a bloques de memoria
+- Controlador de cache:
 		  Funciones principales.
 			+Mecanismo de acceso a datos: 
 				1) Asocia bloques de memoria a lineas de cache
 				2)Funcion de correspondencia entre linea de cache y bloque de memoria
 				3) Politica de remplazo, se sobrescribe una linea de cache en caso de que no haya disp. en la copia de datos utilizando el principio de locaclidad temporal
-			+Politica de escritura: Como el controlador actualiza un dato en la mem. principal si la CPU realiza una escritura
-+ Funciones de correspondencia:
-	 La formula de asociasion entre bloque de memoria y linea de cache depende de los siguientes factores.
+			+ Politica de escritura: Como el controlador actualiza un dato en la mem. principal si la CPU realiza una escritura
+### Funciones de correspondencia:
+  La formula de asociasion entre bloque de memoria y linea de cache depende de los siguientes factores.
 		 1) Tamaño de linea de cache
 		 2) Cantidad de lineaas de caceh
 		 3) Cantidad de direcciones de la linea principal
@@ -61,10 +62,10 @@
 		-LRU (leas recently used) -> El bloque con mayor tiempo sin accesos se saca
 		-Random -> rapido, mejor que FIFO
 +  Politicas de Escritura:
-		-Write-through: 
+	- Write-through: 
 			-bloque modificado se escribe directamente en mem. principal
 			-menos conveniente por el tiempo de cada instruccion de escritura
-		-Write Back: 
+	- Write Back: 
 			-bloque modificado se escribe en la memoria principal solo cuando su linea en cache sera sustituida
 			-mejora los tiempos pero genera problemas de sincronizacion
 + Memoria Cache - Tipos de memoria:
