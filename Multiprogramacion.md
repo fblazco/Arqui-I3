@@ -1,0 +1,2 @@
+Simulacion de procesamiento paralelo que lleva a cabo el computador, se basa en la ejecucion intercalada de los programas. Si bien no es 100% ejecucion paralela, para el usuario se percibe como paralelismo real.
++ Memoria Virtual ww
