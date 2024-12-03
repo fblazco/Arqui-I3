@@ -17,8 +17,8 @@ El paralelimso nos permitira ejecutar multiples instricciones de manera casi sim
 + **Instruction Fetch (IF)** : Obtencion de opcode y literal
 + **Instruction Decode (ID)** : Decodificacion del opcode en señales de control
 + **Executte (EX)** : Ejecucion de la instruccion en la ALU
-+ Memory (MEM): Lectura o escritura en memoria de datos
-+ Writeback (WB): Escritura en registros
++ **Memory (MEM)**: Lectura o escritura en memoria de datos
++ **Writeback (WB)**: Escritura en registros
 ### Pipeline
 + Un **pipeline** es un proceso secuencial con etapas independientes
 + Cada etapa tiene una duracion distinta siendo las de IF y MEM las mas lentas
@@ -47,4 +47,18 @@ El paralelimso nos permitira ejecutar multiples instricciones de manera casi sim
 		+ if (ID/EX.LoadA == 1 and ID/EX.RegIn == Dout and ID.AluA == A) or (ID/EX.LoadB == 1 and ID/EX.RegIn == Dout and ID.AluB == B) → Inserción de burbuja
 + **Hazards de control**
 	+ Ocurren con las instrucciones de salto
+	+ **Stalling**: esperar hasta realizar o no el salto, pero estos no siempre son utiles ya que la cantidad de ciclos depende del pipeline
+	+ En la practica se usan **Unidades de Predicción de salto**
+	+ **Unidades de Prediccion de salto** : 
+		+ el hardware decide si saltar de inmediato o no. Para el curso se asume que nunca hay salto
+	+ **Flushing** :
+		+ En caso de que nos equivoquemos con la prediccion borramos el avancce y retomamos desde el salto
 + **Hazards estructurales**
+	+ Ocurren cuando dos etapas necesitan utilizar una misma unidad funcional
+	+ Se puede solucionar usando *stalling* o agregando otra unidad de memoria, pero no son buenas soluciones
+	+ La solucion correcta es usar una **cache split**
+	+ **Cache Split**:
+		+ Permiten 2 accesos de memoria concurrentes uno para datos y otro para instrucciones
+### Computador basico con Pipeline
++ **ISA**:
+	+ ya no existen operaciones con uso del output de memoria
