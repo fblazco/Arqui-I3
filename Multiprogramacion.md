@@ -39,4 +39,5 @@ Simulacion de procesamiento paralelo que lleva a cabo el computador, se basa en 
 		+ Flush -> Se vacia la cache (valid bit 0 para todas las entradas)
 		+ ASID -> se agrega un identificador del proceso al que pertenece cada traduccion
 	+ Una modificacion para disminuir el overhead del swapping es añadir un dirty bit, este se agrega a la metadata de cada PTE e indica si el marco fisico ha sido modificado o no
+	
 + Tamaño de la tabla de paginas
