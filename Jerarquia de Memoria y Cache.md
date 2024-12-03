@@ -25,34 +25,34 @@
 	  3. Cantidad de direcciones de la linea principal
 	  4. Tag-> identificador unico para corroborar que el dato de una direccion de memoria princiapl se encuentra almacenado en la cache
   + **Directly Mapped**
-		Cada bloque de la mem. principal se asocia solo a una linea de la cache
-		Cada linea de la cache poseera su indice -> 
-		Num linea = Num bloque mod \# Lineas
-		Ventajas:
-			- Computo sencillo y directo
-		Desventajas:
-			-Retencion entre bloques y lineas
-			-Desaprovechamiento del resto dela cache
+	  + Cada bloque de la mem. principal se asocia solo a una linea de la cache 
+	  + Cada linea de la cache poseera su indice 
+	  + Num linea = Num bloque mod \# Lineas
+	  + Ventajas: 
+		  + Computo sencillo y directo
+	+ Desventajas:
+		+ Retencion entre bloques y lineas
+		+ Desaprovechamiento del resto dela cache
 + **Fully Asociative**
-		Cada bloque de la memoria se puede asociar a cualquier linea de la cache
-		Aprovecha toda la memoria, maximiza el hit rate
-		Complejiza el tag
-		Desventajas:
-			-El hit time aumenta considerablemente por que se tiene que buscar coincidencia de tag en todas las lineas
-			-El almacenamiento del tag crece sustancialmente
+	+ Cada bloque de la memoria se puede asociar a cualquier linea de la cache
+	+ Aprovecha toda la memoria, maximiza el hit rate
+	+ Complejiza el tag
+	+ Desventajas:
+		+ El hit time aumenta considerablemente por que se tiene que buscar coincidencia de tag en todas las lineas
+		+ El almacenamiento del tag crece sustancialmente
 + **N-way Asociative**
-		Cada bloque de memoria se asocia a un conjunto de N lineas de cache
-		Divide la cache en conjuntos de N lineas
-		Ventajas:
-			-Cada bloque posee un mapeo directo a su conjunto
-			-Dentro del conjunto el bloque se puede asociar a cualquier linea
-		Ventajas:
-			-Hit time menos respecto a fully- associative
-			-Mayor uso de cache que directly mapped
-			-Ocupa menos bits de tag
-		Desventajas:
-			-Hit time menor que directly mapped
-			-Menor uso de cache que fully associative
+	+ Cada bloque de memoria se asocia a un conjunto de N lineas de cache
+	+ Divide la cache en conjuntos de N lineas
+	+ Ventajas:
+		+ Cada bloque posee un mapeo directo a su conjunto
+		+ Dentro del conjunto el bloque se puede asociar a cualquier linea
+	+ Ventajas:
+		+ Hit time menor respecto a fully- associative
+		+ Mayor uso de cache que directly mapped
+		+ Ocupa menos bits de tag
+	+ Desventajas:
+		+ Hit time menor que directly mapped
+		+ Menor uso de cache que fully associative
 			(esta entre medio de ambas por eso tiene lo mejor de ambos mundos)		
 + **Remplazo de lineas:**
 	 + Politicas de remplazo:
@@ -68,10 +68,10 @@
 	- Write Back: 
 			-bloque modificado se escribe en la memoria principal solo cuando su linea en cache sera sustituida
 			-mejora los tiempos pero genera problemas de sincronizacion
-+ Memoria Cache - Tipos de memoria:
++ **Memoria Cache - Tipos de memoria**:
 	+ Cache Unified
-		+Almacena datos e instrucciones
-		+Cuenta con la desventaja de su hit rate 
+		+ Almacena datos e instrucciones
+		+ Cuenta con la desventaja de su hit rate 
 	+ Cache Split
-		+Cache con division interna para datos e instrucciones
-		+mayor hit rate pero hardware mas complejo
+		+ Cache con division interna para datos e instrucciones
+		+ mayor hit rate pero hardware mas complejo
