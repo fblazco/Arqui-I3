@@ -14,7 +14,7 @@ Simulacion de procesamiento paralelo que lleva a cabo el computador, se basa en 
 	+ Cada pagina se mapea a un marco de la memoria fisica (comparten tamaño)
 	+ Usamos los bits de la direccion virtual para separar numero de pagina del offset de la palabra buscada en la pagina
 ### Tabla de Paginas:
-+  Se encuentra en la seccion protegida de la memoria, almacenada en el registro especial PTBR (pete brasileño)
++  Se encuentra en la seccion protegida de la memoria, almacenada en el registro especial PTBR 
 + El indice de cada entrada (PTE) representa el numero de pagina conteniendo los bit de marco fisico y los bits de metadata 
 + Bits de metadata: 
 	 + Entregan informacion sobre la asociacion pagina marco fisico
