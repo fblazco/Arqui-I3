@@ -61,17 +61,17 @@
 		+ LFU (least frequently used) -> El bloque con menos accesos se saca. 
 		+ LRU (leas recently used) -> El bloque con mayor tiempo sin accesos se saca
 		+ Random -> rapido, mejor que FIFO
-+  **Politicas de Escritura:**
-	- Write-through: 
-			-bloque modificado se escribe directamente en mem. principal
-			-menos conveniente por el tiempo de cada instruccion de escritura
-	- Write Back: 
-			-bloque modificado se escribe en la memoria principal solo cuando su linea en cache sera sustituida
-			-mejora los tiempos pero genera problemas de sincronizacion
-+ **Memoria Cache - Tipos de memoria**:
-	+ Cache Unified
-		+ Almacena datos e instrucciones
-		+ Cuenta con la desventaja de su hit rate 
-	+ Cache Split
-		+ Cache con division interna para datos e instrucciones
-		+ mayor hit rate pero hardware mas complejo
+### Politicas de Escritura:		
+1. Write-through: 
+	- bloque modificado se escribe directamente en mem. principal
+	- menos conveniente por el tiempo de cada instruccion de escritura
+3. Write Back: 
+	- bloque modificado se escribe en la memoria principal solo cuando su linea en cache sera sustituida
+	- mejora los tiempos pero genera problemas de sincronizacion
+### Memoria Cache - Tipos de memoria:
+1. Cache Unified
+	+ Almacena datos e instrucciones
+	+ Cuenta con la desventaja de su hit rate 
+2. Cache Split
+	+ Cache con division interna para datos e instrucciones
+	+ Mayor hit rate pero hardware mas complejo
